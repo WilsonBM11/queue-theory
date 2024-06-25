@@ -3,14 +3,14 @@ import { Button, Card, Col, Form, InputNumber, Row} from 'antd';
 import useDependencies from './hooks';
 import Title from 'antd/es/typography/Title';
 
-const MM1 = () => {
-	const { lambda, setLambda, mu, setMu, k, setK, results, calculateResults } =
+const MD1 = () => {
+	const { lambda, setLambda, mu, setMu, results, calculateResults } =
 		useDependencies();
 
 	return (
 		<>
 			<Title level={4}>
-				Modelo MM1
+				Modelo MD1
 			</Title>
 			<Form
 				layout='inline'
@@ -35,28 +35,16 @@ const MM1 = () => {
 						}}
 					/>
 				</Form.Item>
-				<Form.Item label='K'>
-					<InputNumber
-						min={0}
-						value={k}
-						onChange={value => {
-							setK(value);
-						}}
-					/>
-				</Form.Item>
 				<Form.Item>
 					<Button type='primary' htmlType='submit'>
 						Calcular
 					</Button>
 				</Form.Item>
 			</Form>
-			{results.L !== undefined &&
+				{results.L !== undefined &&
 				results.W !== undefined &&
 				results.Lq !== undefined &&
-				results.Wq !== undefined &&
-				results.p !== undefined &&
-				results.Po !== undefined &&
-				results.PnK !== undefined && (
+				results.Wq !== undefined &&(
 					<Row gutter={[16, 16]}>
 						<Col xs={24} sm={12} md={8}>
 							<Card title='L' bordered={false}>
@@ -78,25 +66,10 @@ const MM1 = () => {
 								<p>{results.Wq.toFixed(2)}</p>
 							</Card>
 						</Col>
-						<Col xs={24} sm={12} md={8}>
-							<Card title='p' bordered={false}>
-								<p>{results.p.toFixed(2)}</p>
-							</Card>
-						</Col>
-						<Col xs={24} sm={12} md={8}>
-							<Card title='Po' bordered={false}>
-								<p>{results.Po.toFixed(2)}</p>
-							</Card>
-						</Col>
-						<Col xs={24} sm={12} md={8}>
-							<Card title='Pn > k' bordered={false}>
-								<p>{results.PnK.toFixed(2)}</p>
-							</Card>
-						</Col>
 					</Row>
 				)}
 		</>
 	);
 };
 
-export default MM1;
+export default MD1;

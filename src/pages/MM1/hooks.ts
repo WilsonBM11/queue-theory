@@ -3,7 +3,7 @@ import { useState } from 'react';
 const useDependencies = () => {
 	const [lambda, setLambda] = useState<number | null>(null);
 	const [mu, setMu] = useState<number | null>(null);
-    const [k, setK] = useState<number | null>(null);
+	const [k, setK] = useState<number | null>(null);
 	const [results, setResults] = useState<{
 		L?: number;
 		W?: number;
@@ -28,7 +28,7 @@ const useDependencies = () => {
 		}
 	};
 
-	return { lambda, setLambda, mu, setMu, k , setK, calculateResults, results };
+	return { lambda, setLambda, mu, setMu, k, setK, calculateResults, results };
 };
 
 export default useDependencies;
