@@ -50,11 +50,12 @@ const MM1PF = () => {
 					</Button>
 				</Form.Item>
 			</Form>
-			{results.L !== undefined &&
+				{results.L !== undefined &&
 				results.W !== undefined &&
 				results.Lq !== undefined &&
 				results.Wq !== undefined &&
-				results.Po !== undefined && (
+				results.Po !== undefined && 
+				results.Pn !== undefined && (
 					<Row gutter={[16, 16]}>
 						<Col xs={24} sm={12} md={8}>
 							<Card title='L' bordered={false}>
@@ -79,6 +80,14 @@ const MM1PF = () => {
 						<Col xs={24} sm={12} md={8}>
 							<Card title='Po' bordered={false}>
 								<p>{results.Po.toFixed(2)}</p>
+							</Card>
+						</Col>
+						<Col xs={24} sm={12} md={8}>
+							<Card title={`Pn`} bordered={false}>
+							{results.Pn.map((value, index) => (
+								// eslint-disable-next-line react/jsx-key
+								<p>P{index}: {value.toFixed(2)}</p>
+							))}
 							</Card>
 						</Col>
 					</Row>

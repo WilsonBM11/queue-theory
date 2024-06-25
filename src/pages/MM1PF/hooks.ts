@@ -11,7 +11,7 @@ const useDependencies = () => {
 		Lq?: number;
 		Wq?: number;
 		Po?: number;
-		Pn?: Record<number, number>;
+		Pn?: number[];
 	}>({});
 
 	const calculateResults = () => {
@@ -40,12 +40,12 @@ const useDependencies = () => {
 	}
 
 	const calculatePn = (Po:number) => {
-		const pn: Record<number, number> = {};
+		const Pn: number[] = [];
 		if (lambda !== null && mu !== null && N !== null) {
 			for (let n = 0; n <= N; n++) {
-				pn[n] = (factorial(N) / factorial(N - n)) * Math.pow(lambda / mu, n) * Po;
+				Pn.push((factorial(N) / factorial(N - n)) * Math.pow(lambda / mu, n) * Po);
 			}
-			return pn;
+			return Pn;
 		}
 	}
 	  
