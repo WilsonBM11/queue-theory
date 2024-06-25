@@ -10,14 +10,14 @@ import MM1PF from './pages/MM1PF/MM1PF';
 function App() {
 	return (
 		<>
-			<BrowserRouter>
+			<BrowserRouter  basename="/queue-theory">
 				<NavBar />
 				<Routes>
-					<Route path='queue-theory/' element={<Main />}></Route>
-					<Route path='queue-theory/MM1' element={<MM1 />}></Route>
-					<Route path='queue-theory/MMm' element={<MMm />}></Route>
-					<Route path='queue-theory/MD1' element={<MD1 />}></Route>
-					<Route path='queue-theory/MM1PF' element={<MM1PF />}></Route>
+					<Route path='/' element={<Main />}></Route>
+					<Route path='/MM1' element={<MM1 />}></Route>
+					<Route path='/MMm' element={<MMm />}></Route>
+					<Route path='/MD1' element={<MD1 />}></Route>
+					<Route path='/MM1PF' element={<MM1PF />}></Route>
 				</Routes>
 			</BrowserRouter>
 		</>
