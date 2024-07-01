@@ -14,6 +14,16 @@ const useDependencies = () => {
 		PnK?: number;
 	}>({});
 
+	interface Costs {
+		serviceCost?: string;
+		waitingCost?: string;
+	}
+
+	const costs: Costs = {
+		serviceCost: "m * Cs = canales * costo-canal",
+		waitingCost: "(λ * Wq) * Cw"
+	}
+
 	const calculateResults = () => {
 		if (lambda !== null && mu !== null && k !== null) {
 			const L = lambda / (mu - lambda); // Promedio de Clientes o Unidades en el Sistema
@@ -25,6 +35,7 @@ const useDependencies = () => {
 			const PnK = (lambda / mu) ** (k + 1);
 			setResults({ L, W, Lq, Wq, p, Po, PnK });
 			console.log(results);
+			console.log(costs);
 		}
 	};
 
